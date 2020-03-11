@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script src="faculty.js"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <body>
+            <h1>Faculty First Name</h1>
+        <script>
+            var getPhoto = employees.map(function(person)
+            {
+                return person.photo;
+            })
+            
+            d3.select("body")
+              .selectAll("p")
+              .data(employees)
+              .enter()
+              .append("p")
+              .style("color","blue")
+              .text(getPhoto);
+            console.log("Employees",getPhoto);
+            
+        </script>
+        </body>
+    </head>
+</html>

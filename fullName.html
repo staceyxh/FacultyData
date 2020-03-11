@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script src="faculty.js"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <body>
+            <h1>Faculty Full Name</h1>
+        <script>
+            var getFullName = employees.map(function(person)
+            {
+                return person.firstName+" "+person.lastName;
+            })
+            
+            d3.select("body")
+              .selectAll("p")
+              .data(employees)
+              .enter()
+              .append("p")
+              .style("color","blue")
+              .text(getFullName.toString());
+            console.log("Employees",getFullName);
+            
+        </script>
+        </body>
+    </head>
+</html>

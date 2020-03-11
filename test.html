@@ -1,0 +1,41 @@
+<html>
+    <head>
+    <script src="faculty.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+
+    <script>
+        //print results to screen as well as the console
+        var report = function(parent, answer) {
+
+            if (!Array.isArray(answer)) {
+                answer = [answer];
+            }
+            d3.select(parent)
+                .selectAll("p")
+                .data(answer)
+                .enter()
+                .append("p")
+                .text(function(ans) {
+                    return ans.toString()
+                });
+            console.log("parent" + parent, answer);
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <h1>Mapping the Planets</h1>
+
+    <div id="P1">
+        <h3>Print all of the planet objects--look in console</h3>
+        <script>
+            var answer = employees.map(function(person){return person.firstName}); //already done!
+            report("#P1", answer)
+            //will need to look at the console to confirm for array objects.
+        </script>
+    </div>
+    </body>
+</html>
