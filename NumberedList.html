@@ -4,20 +4,19 @@
         <script src="https://d3js.org/d3.v5.min.js"></script>
         <body>
             <h1>Faculty First Name</h1>
+            <ol></ol>
         <script>
-            var getFirstName = employees.map(function(person)
-            {
-                return person.firstName;
-            })
             
-            d3.select("body")
-              .selectAll("p")
+            d3.select("ol")
+              .selectAll("li")
               .data(employees)
               .enter()
-              .append("p")
+              .append("li")
               .style("color","blue")
-              .text(getFirstName.toString());
-            console.log("Employees",[getFirstName]);
+              .text(function(person)
+            {
+                return person.lastName;
+            });
             
         </script>
         </body>
