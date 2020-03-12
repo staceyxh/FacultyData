@@ -5,10 +5,6 @@
         <body>
             <h1>Faculty Full Name</h1>
         <script>
-            var getFullName = employees.map(function(person)
-            {
-                return person.firstName+" "+person.lastName;
-            })
             
             d3.select("body")
               .selectAll("p")
@@ -16,7 +12,10 @@
               .enter()
               .append("p")
               .style("color","blue")
-              .text(getFullName.toString());
+              .text(var getFullName = employees.map(function(person)
+            {
+                return person.firstName+" "+person.lastName;
+            }));
             console.log("Employees",getFullName);
             
         </script>
