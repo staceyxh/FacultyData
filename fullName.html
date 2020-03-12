@@ -11,12 +11,10 @@
               .data(employees)
               .enter()
               .append("p")
-              .style("color","blue")
-              .text(var getFullName = employees.map(function(person)
+              .text(function(person)
             {
                 return person.firstName+" "+person.lastName;
-            }));
-            console.log("Employees",getFullName);
+            });
             
         </script>
         </body>
