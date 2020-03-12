@@ -5,19 +5,16 @@
         <body>
             <h1>Faculty First Name</h1>
         <script>
-            var getFirstName = employees.map(function(person)
-            {
-                return person.firstName;
-            })
             
             d3.select("body")
-              .selectAll("p")
+              .selectAll("img")
               .data(employees)
               .enter()
-              .append("p")
-              .style("color","blue")
-              .text(getFirstName.toString());
-            console.log("Employees",[getFirstName]);
+              .append("img")
+              .attr("src",function(person)
+            {
+                return person.photo;
+            });
             
         </script>
         </body>
